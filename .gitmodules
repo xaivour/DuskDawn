@@ -1,0 +1,12 @@
+[submodule "DuskDawn/vendor/imgui"]
+	path = DuskDawn/vendor/imgui
+	url = https://github.com/ocornut/imgui.git
+[submodule "DuskDawn/vendor/spdlog"]
+	path = DuskDawn/vendor/spdlog
+	url = https://github.com/gabime/spdlog.git
+[submodule "DuskDawn/vendor/glm"]
+	path = DuskDawn/vendor/glm
+	url = https://github.com/g-truc/glm.git
+[submodule "DuskDawn/vendor/glfw"]
+	path = DuskDawn/vendor/glfw
+	url = https://github.com/glfw/glfw.git
