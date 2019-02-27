@@ -1,0 +1,14 @@
+#pragma once 
+
+#define DD_VERSION_MAJOR @DD_VERSION_MAJOR@
+#define DD_VERSION_MINOR @DD_VERSION_MINOR@
+#define DD_VERSION_PATCH @DD_VERSION_PATCH@
+
+#define DD_VERSION "@DD_VERSION@"
+
+#define DD_VERSION_HEX (@DD_VERSION_MAJOR@ << 16 + \
+                        @DD_VERSION_MINOR@ << 8  + \
+                        @DD_VERSION_PATCH@ << 4
+                        
+#cmakedefine DD_DEBUG
+#cmakedefine DD_RELEASE
