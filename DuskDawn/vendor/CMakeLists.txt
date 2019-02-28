@@ -1,9 +1,11 @@
 cmake_minimum_required(VERSION 3.8)
 project(Vendor) 
 
+if(NOT DD_PATFORM_ANDROID)
 add_subdirectory(glfw)
 
 add_library(Vendor::GLFW ALIAS glfw)
+endif()
 
 add_subdirectory(glm)
 

@@ -1,11 +1,13 @@
+set(DIR ${CMAKE_CURRENT_SOURCE_DIR})
 
 ################################################
 # Core Sources 
 ################################################
 
-list(APPEND DD_SOURCE
-)
-
-list(APPEND DD_HEADERS
-    src/Core/Core.h
+target_sources(DuskDawn
+    PRIVATE
+        ${DIR}/Core/Core.h
+        ${DIR}/Core/Log.h
+		${DIR}/Core/Macros.h
+		${DIR}/Core/Log.cpp
 )

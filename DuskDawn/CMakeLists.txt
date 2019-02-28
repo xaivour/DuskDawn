@@ -1,6 +1,8 @@
 ######################################
 # DuskDawn
 ######################################
+cmake_minimum_required(VERSION 3.8)
+project(DuskDawn VERSION 0.1.0)
 
 add_subdirectory(vendor EXCLUDE_FROM_ALL)
 
@@ -15,15 +17,15 @@ list(APPEND DD_HEADERS
     DuskDawn.h
 )
 
-include(src/CMakeLists.txt)
-
-set(DD_ALL_SOURCES ${DD_SOURCE} ${DD_HEADERS} ${DD_CORE})
+set(DD_ALL_SOURCES ${DD_SOURCE} ${DD_HEADERS})
 
 if(SHARED_LIBS)
 add_library(DuskDawn SHARED ${DD_ALL_SOURCES})
 else()
 add_library(DuskDawn STATIC ${DD_ALL_SOURCES})
 endif()
+
+add_subdirectory(src)
 
 target_link_libraries(DuskDawn
     PUBLIC
@@ -41,16 +43,18 @@ target_include_directories(DuskDawn
 if(SHARED_LIBS)
 target_compile_definitions(DuskDawn
     PRIVATE
-        DD_SHARED_BUILD
-    PUBLIC
-        DD_SHARED
+        -DDD_SHARED_BUILD
+    INTERFACE
+        -DDD_SHARED
 )
 else()
 target_compile_definitions(DuskDawn
     PUBLIC
-        DD_STATIC
+        -DDD_STATIC
 )
 endif()
+
+add_library(DuskDawn::DuskDawn ALIAS DuskDawn)
 
 
 

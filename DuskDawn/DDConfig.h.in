@@ -6,9 +6,9 @@
 
 #define DD_VERSION "@DD_VERSION@"
 
-#define DD_VERSION_HEX (@DD_VERSION_MAJOR@ << 16 + \
-                        @DD_VERSION_MINOR@ << 8  + \
-                        @DD_VERSION_PATCH@ << 4
+#define DD_VERSION_HEX ((@DD_VERSION_MAJOR@ << 8)  + \
+                        (@DD_VERSION_MINOR@ << 4)  + \
+                        (@DD_VERSION_PATCH@ << 2))
                         
 #cmakedefine DD_DEBUG
 #cmakedefine DD_RELEASE
