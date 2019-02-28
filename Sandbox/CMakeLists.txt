@@ -7,4 +7,3 @@ target_link_libraries(Sandbox
 	PUBLIC
 		DuskDawn::DuskDawn
 )
-

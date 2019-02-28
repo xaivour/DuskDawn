@@ -10,4 +10,6 @@ target_sources(DuskDawn
         ${DIR}/Core/Log.h
 		${DIR}/Core/Macros.h
 		${DIR}/Core/Log.cpp
+		${DIR}/Core/Application.cpp
+		${DIR}/Core/Application.h
 )

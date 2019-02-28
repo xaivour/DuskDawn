@@ -7,15 +7,21 @@
 
 #if defined(DD_PLATFORM_WINDOWS) || defined(DD_PLATFORM_LINUX) || defined(DD_PLATFORM_MAC)
 
-USING_NS_DD;
+extern DuskDawn::Application* DuskDawn::CreateApplication();
 
-int main()
+int main(int argc, char* argv[])
 {
-	Log::InitLog();
+	DuskDawn::Log::InitLog();
 	DD_CORE_WARN("Log initialized");
-	DD_CORE_INFO("Dusk Dawn version 0x{:x}", DD_VERSION_HEX);
+	DD_CORE_INFO("Starting DuskDawn Version {}", DD_VERSION);
 
-	std::cin.get();
+	auto app = DuskDawn::CreateApplication();
+
+	DD_CORE_ASSERT(app != nullptr, "app == nullptr : App creation failed");
+
+	app->Run();
+	delete app;
+
 	return 0;
 }
 
